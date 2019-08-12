@@ -67,6 +67,8 @@ Arduino Library: <a href="https://raw.githubusercontent.com/wemakerspace/Cytron_
 ## Installation
 1. Open the Arduino IDE, select `Sketch` -> `Include Library` -> `Add.ZIP Library`.
 2. Select the zip file you just download.
+3. Open the Arduino IDE, select `Sketch` -> `Include Library` -> `Manage libraries...`.
+4. Search for `Adafruit BME280 Library` and `Adafruit Unified Sensor`
 3. Click `Install` to install the library.
 4. Restart the Arduino IDE.
 5. Examples can be opened in Arduino IDE from `File` -> `Examples` -> `Unabiz-arduino`->`Cytron Sigfox BME280`.<br>
@@ -81,6 +83,10 @@ Setup SigFox Backend
 4. Copy the `SIGFOX ID = XXXXXXXX` & `PAC = XXXXXXXXXXXXXXX` information
 5. Register the device to your Sigfox Account.<br>
 
+![alt text][logo]
+
+[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/Arduino-serial-output.png "Arduino Serial Output"
+
 ## Setup ThingSpeak
 1. Register a free account in [ThingSpeak](https://thingspeak.com/)
 2. We need to create 2 Channel, one of Sigfox backend to pipe encoded data and one for display decoded data.
@@ -89,6 +95,10 @@ Setup SigFox Backend
     - Field2 : `Pressure`
     - Field3 : `Humidity`
 4. Once channel is created, copy both channel API key to be use later.
+
+![alt text][logo]
+
+[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/thingspeak-channel.png "Thingspeak Channel"
 
 ## Setup Sigfox Callback
 1. Go to [Sigfox Backend](https://backend.sigfox.com/)
@@ -111,12 +121,20 @@ https://api.thingspeak.com/update?api_key=XXXXXXXXXXXXXXX&field1={customData#tem
 
 The api_key will need to be replace by your thingspeak channel Write API key.(Channel 1 Write API Key)
 
+![alt text][logo]
+
+[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfox-backend-callback.png "Sigfox Callback"
+
 # Sigfox Messages
 Since the Sigfox network can send a maximum of 140 messages per day, we'll optimize the readings and send data in compact binary format.
 
 Data packing is important because the maximum size of a message you can send is 12 bytes. A float occupies 4 bytes, so we'll need to pack our readings into some smaller representation.
 
 The float format is very wide (you can represent numbers as big as 3.402823e+38 (!) ) and we don't need the whole data space; we can then decide safe limits (based on where we are going to deploy the station) and restore the original representation in the backend.
+
+![alt text][logo]
+
+[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfox-backend-message.png "Sigfox Message"
 
 ## Decoding 12byte Sigfox Payload
 
@@ -154,6 +172,15 @@ thingSpeakWrite(writeChannelID, analyzedData, 'WriteKey', writeAPIKey);
     - Action : `MATLAB Analysis Code to Execute`
     - Option : ` Run action each time conditon is met`
 7. Save.
+
+# ThingSpeak Dashboard
+
+Once you done all this, the data from the Arduino will be send over to Sigfox server and then forward to Thingspeak every 10 minute.
+
+![alt text][logo]
+
+[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/thingspeak-dashboard.png "Thingspeak Dashboard"
+
 
 
 
