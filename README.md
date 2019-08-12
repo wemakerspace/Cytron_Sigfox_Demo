@@ -12,9 +12,7 @@ PageTitle: Working with Cytron Sigfox Arduino Shield
 Controller: <a href="https://my.cytron.io/p-maker-uno-simplifying-arduino-for-education" target="_blank">Maker UNO (Arduino UNO compatible)</a><br/>
 IDE: <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE </a><br/>
 
-![alt text][logo]
-
-[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfoxshield-v2s.png "Cytron Sigfox Shield"
+![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfoxshield-v2s.png "Cytron Sigfox Shield")
 
 
 
@@ -83,9 +81,7 @@ Setup SigFox Backend
 4. Copy the `SIGFOX ID = XXXXXXXX` & `PAC = XXXXXXXXXXXXXXX` information
 5. Register the device to your Sigfox Account.<br>
 
-![alt text][logo]
-
-[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/Arduino-serial-output.png "Arduino Serial Output"
+![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/Arduino-serial-output.png "Arduino Serial Output")
 
 ## Setup ThingSpeak
 1. Register a free account in [ThingSpeak](https://thingspeak.com/)
@@ -96,9 +92,7 @@ Setup SigFox Backend
     - Field3 : `Humidity`
 4. Once channel is created, copy both channel API key to be use later.
 
-![alt text][logo]
-
-[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/thingspeak-channel.png "Thingspeak Channel"
+![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/thingspeak-channel.png "Thingspeak Channel")
 
 ## Setup Sigfox Callback
 1. Go to [Sigfox Backend](https://backend.sigfox.com/)
@@ -121,9 +115,7 @@ https://api.thingspeak.com/update?api_key=XXXXXXXXXXXXXXX&field1={customData#tem
 
 The api_key will need to be replace by your thingspeak channel Write API key.(Channel 1 Write API Key)
 
-![alt text][logo]
-
-[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfox-backend-callback.png "Sigfox Callback"
+![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/Sigfox-backend-callback.png "Sigfox Callback")
 
 # Sigfox Messages
 Since the Sigfox network can send a maximum of 140 messages per day, we'll optimize the readings and send data in compact binary format.
@@ -132,9 +124,7 @@ Data packing is important because the maximum size of a message you can send is 
 
 The float format is very wide (you can represent numbers as big as 3.402823e+38 (!) ) and we don't need the whole data space; we can then decide safe limits (based on where we are going to deploy the station) and restore the original representation in the backend.
 
-![alt text][logo]
-
-[logo]: https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfox-backend-message.png "Sigfox Message"
+![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/Sigfox-backend-message.png "Sigfox Message")
 
 ## Decoding 12byte Sigfox Payload
 
