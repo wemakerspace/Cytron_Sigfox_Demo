@@ -12,7 +12,7 @@ PageTitle: Working with Cytron Sigfox Arduino Shield
 Controller: <a href="https://my.cytron.io/p-maker-uno-simplifying-arduino-for-education" target="_blank">Maker UNO (Arduino UNO compatible)</a><br/>
 IDE: <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE </a><br/>
 
-![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/Shield-Sigfox-UNA-V2S2.jpg "Cytron Sigfox Shield")
+![alt text](https://raw.githubusercontent.com/wemakerspace/Cytron_Sigfox_Demo/master/sigfoxshield-v2s.png "Cytron Sigfox Shield")
 
 
 
