@@ -85,7 +85,9 @@ Setup SigFox Backend
 
 ## Setup ThingSpeak
 1. Register a free account in [ThingSpeak](https://thingspeak.com/)
-2. We need to create 2 Channel, one of Sigfox backend to pipe encoded data and one for display decoded data.
+2. We need to create 2 Channels:
+    - 1st Channel for Sigfox backend to pipe encoded data
+    - 2nd Channel for ThingSpeak to process and display decoded data.
 3. Create both channel with detail as per below:
     - Field1 : `Temperature`
     - Field2 : `Pressure`
